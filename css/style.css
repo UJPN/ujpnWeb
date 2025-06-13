@@ -76,6 +76,24 @@
   transition: opacity 1s ease-in-out;
   z-index: 1;
 }
+
+.volunteer-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #ffcc00; /* or your theme color */
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+.volunteer-btn:hover {
+  background-color: #e6b800;
+}
+
+
 .hero-slide::before {
   content: "";
   position: absolute;
@@ -338,6 +356,64 @@ nav.float-right ul {
   font-size: 0.9rem;
   color: #666;
 }
+
+.mission-vision-section {
+  padding: 60px 20px;
+  background-color: #f4f9ff;
+}
+.mission-vision-section h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.mv-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+.mv-card {
+  flex: 1 1 300px;
+  background: #fff;
+  padding: 20px;
+  border-left: 5px solid #0f2a5d;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.mv-card h3 {
+  margin-top: 0;
+  color: #0f2a5d;
+}
+
+/* Team Bio Cards */
+.team-member {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.team-member img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+.team-bio-card {
+  text-align: center;
+  max-width: 300px;
+  margin-top: 10px;
+}
+.team-bio-card p {
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+}
+.team-bio-card a {
+  color: #0f2a5d;
+  font-size: 1.2rem;
+}
+.team-bio-card a:hover {
+  color: #e09f32;
+}
+
+
 .timeline {
   list-style: none;
   padding: 0;

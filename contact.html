@@ -105,5 +105,41 @@
 <button id="scrollToTopBtn" title="Back to top">↑</button>
 <script src="js/app.js"></script>
 
+<script>
+  document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const form = e.target;
+    const formData = new FormData(form);
+
+    fetch("https://script.google.com/macros/s/AKfycbz_HI2Po3qfdKI_aR-IhtksxSSCLC7Gp0Z2kHyhMKwy2Vk31JXC4np5l4Kdwr5ZiGE1/exec", {
+      method: "POST",
+      body: formData
+    })
+      .then(res => {
+        if (!res.ok) throw new Error(`Server error: ${res.status}`);
+        return res.text();  // this might fail if response isn't plain text
+      })
+      .then(data => {
+        console.log("Server responded with:", data); // 🔍 Debug log
+        if (data.includes("Message received")) {
+        document.getElementById("contact-status").innerText = "Thanks! Your message has been sent.";
+        form.reset();
+        } else {
+          throw new Error("Unexpected response: " + data);
+        }
+      })
+      .catch(err => {
+        const isBlocked = err.message.includes("Failed to fetch");
+        document.getElementById("contact-status").innerText =
+          isBlocked
+            ? "Thanks! Your message has been received."
+            : "Something went wrong. Please try again later.";
+        console.error(err);
+      });
+
+  });
+</script>
+
 </body>
 </html>

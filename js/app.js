@@ -52,7 +52,7 @@ setInterval(nextSlide, 5000);
 
 // Contact form handler
 const contactForm = document.getElementById("contactForm");
-if (contactForm) {
+/*if (contactForm) {
   contactForm.addEventListener("submit", async (e) => {
     e.preventDefault();
     const res = await fetch("http://localhost:5000/contact", {
@@ -69,9 +69,9 @@ if (contactForm) {
     contactForm.reset();
   });
 }
-
+*/
 // Donate form handler
-const donateForm = document.getElementById("donateForm");
+/*const donateForm = document.getElementById("donateForm");
 if (donateForm) {
   donateForm.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -98,6 +98,18 @@ if (donateForm) {
     }
   });
 }
+*/
+
+// Temporarily disable donate form submission
+if (donateForm) {
+  donateForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    document.getElementById("donate-status").textContent =
+      "This form is currently in test mode. Donations are not being processed right now.";
+  });
+}
+
+
 
 
 // Preset amount button handler
