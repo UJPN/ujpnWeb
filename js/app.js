@@ -15,6 +15,17 @@ scrollToTopBtn.addEventListener("click", function () {
   });
 });
 
+window.addEventListener('DOMContentLoaded', () => {
+  fetch('navbar.html')
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById('navbar-container').innerHTML = data;
+    });
+});
+
+
+
+
 let currentSlide = 0;
 const slides = document.querySelectorAll('.hero-slide');
 const dots = document.querySelectorAll('.dot');
