@@ -844,4 +844,42 @@ form input {
     font-size: 16px;
     padding: 10px 14px;
   }
+  .team-hierarchy {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .team-card {
+    width: 90%;
+    flex-direction: column;
+    height: auto;
+    transition: none;
+  }
+
+  .card-content {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .card-image,
+  .card-image img {
+    width: 100%;
+    height: auto;
+  }
+
+  .card-text {
+    padding: 15px;
+    overflow-y: visible;
+    max-height: none;
+  }
+
+  .card-text h3, .card-text h5 {
+    display: block;
+  }
+
+  .team-card:hover .card-image {
+    transform: none;
+  }
+
 }
